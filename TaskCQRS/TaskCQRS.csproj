@@ -40,6 +40,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson, Version=1.9.0.200, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\mongocsharpdriver.1.9.0\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.9.0.200, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\mongocsharpdriver.1.9.0\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -216,6 +224,7 @@
     <Content Include="Views\Home\Details.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Home\Rename.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -224,9 +233,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Site.Master" />
   </ItemGroup>
   <ItemGroup>
@@ -240,6 +246,10 @@
     <ProjectReference Include="..\TaskCQRS.Core\TaskCQRS.Core.csproj">
       <Project>{6abb447a-a2e4-4656-862c-d224b0b6ba77}</Project>
       <Name>TaskCQRS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaskCQRS.Projection\TaskCQRS.Projection.csproj">
+      <Project>{28d9f673-356d-4b47-b0a2-ff7cd7f0c4b3}</Project>
+      <Name>TaskCQRS.Projection</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

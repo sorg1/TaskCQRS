@@ -1,0 +1,5 @@
+e:\Projects\TaskCQRS\TaskCQRS.Core\bin\Debug\TaskCQRS.Core.dll
+e:\Projects\TaskCQRS\TaskCQRS.Core\bin\Debug\TaskCQRS.Core.pdb
+e:\Projects\TaskCQRS\TaskCQRS.Core\obj\Debug\TaskCQRS.Core.dll
+e:\Projects\TaskCQRS\TaskCQRS.Core\obj\Debug\TaskCQRS.Core.pdb
+E:\Projects\TaskCQRS\TaskCQRS.Core\obj\Debug\TaskCQRS.Core.csprojResolveAssemblyReference.cache

@@ -11,6 +11,9 @@ using TaskCQRS.Domain;
 using TaskCQRS.Domain.Tasks;
 using TaskCQRS.Core;
 
+using TaskCQRS.Projection.Impl;
+using MongoDB.Driver;
+
 namespace TaskCQRS
 {
     // Примечание: Инструкции по включению классического режима IIS6 или IIS7 
@@ -46,7 +49,16 @@ namespace TaskCQRS
             bus.RegisterHandler<TaskCreated>(list.Handle);
             bus.RegisterHandler<TaskRenamed>(list.Handle);
             bus.RegisterHandler<TaskRemoved>(list.Handle);
+            
+            var client = new MongoClient("mongodb://localhost");
+            var server = client.GetServer();
+            var database = server.GetDatabase("TaskList");
 
+            var projection = new TaskProjection(database);
+
+            bus.RegisterHandler<TaskCreated>(projection.Handle);
+            bus.RegisterHandler<TaskRenamed>(projection.Handle);
+            bus.RegisterHandler<TaskRemoved>(projection.Handle);
          //   FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
            
          //   BundleConfig.RegisterBundles(BundleTable.Bundles);

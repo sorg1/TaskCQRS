@@ -12,6 +12,8 @@ using System.Web.Http;
 using System.Net;
 using System.Net.Http;
 
+using TaskCQRS.Projection;
+
 namespace TaskCQRS.Services
 {
     //[HandleError]
@@ -19,22 +21,25 @@ namespace TaskCQRS.Services
     {
         private readonly HttpConfiguration configuration;
         private FakeBus _bus;
-        private ReadModelFacade _readmodel;
+        //private ReadModelFacade _readmodel;
+        private readonly ProjectionFacade tasksProjection;
+        
 
         public TasksController()
         {
             this.configuration = GlobalConfiguration.Configuration;
             _bus = ServiceLocator.Bus;
-            _readmodel = new ReadModelFacade();
+            tasksProjection = new ProjectionFacade();
+            
         }
 
         // GET /services/tasks
         [AcceptVerbs("GET")]
         [ActionName("Tasks")]
         //   [MongoQueryable]
-        public IEnumerable<TaskItemListDto> Get()
+        public IQueryable<TaskItemDetailsDto> Get()
         {
-            return _readmodel.GetTaskItems(); 
+            return tasksProjection.GetTasks(); 
             //return new Task { Id = Guid.NewGuid(), Name = "Vasya Pushkin!!!" };
         }
 
@@ -43,7 +48,7 @@ namespace TaskCQRS.Services
         //   [MongoQueryable]
         public TaskItemDetailsDto Get([FromUri]Guid id)
         {
-            return _readmodel.GetTaskItemDetails(id);
+            return tasksProjection.GetTaskById(id);
             //return new Task { Id = Guid.NewGuid(), Name = "Vasya Pushkin!!!" };
         }
 

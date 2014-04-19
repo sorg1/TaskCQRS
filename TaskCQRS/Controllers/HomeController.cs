@@ -7,29 +7,34 @@ using TaskCQRS.Core;
 using TaskCQRS.Domain;
 using TaskCQRS.Domain.Tasks;
 
+using TaskCQRS.Projection;
+
 namespace TaskCQRS.Controllers
 {
+    
+
     public class HomeController : Controller
     {
         private FakeBus _bus;
-        private ReadModelFacade _readmodel;
-
-
+        //private ReadModelFacade _readmodel;
+        private readonly ProjectionFacade tasksProjection;
+        
         public HomeController()
         {
             _bus = ServiceLocator.Bus;
-            _readmodel = new ReadModelFacade();
+            //_readmodel = new ReadModelFacade();
+            tasksProjection = new ProjectionFacade();
         }
 
         public ActionResult Index()
         {
-            ViewData.Model = _readmodel.GetTaskItems();
+            ViewData.Model = tasksProjection.GetTasks();
 
             return View();
         }
         public ActionResult Details(Guid id)
         {
-            ViewData.Model = _readmodel.GetTaskItemDetails(id);
+            ViewData.Model = tasksProjection.GetTaskById(id);
             return View();
         }
 
@@ -47,7 +52,7 @@ namespace TaskCQRS.Controllers
         }
         public ActionResult Rename(Guid id)
         {
-            ViewData.Model = _readmodel.GetTaskItemDetails(id);
+            ViewData.Model = tasksProjection.GetTaskById(id);
             return View();
         }
 

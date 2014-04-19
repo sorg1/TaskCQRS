@@ -1,0 +1,15 @@
+E:\Projects\TaskCQRS\TaskCQRS.Projection\obj\Debug\TaskCQRS.Projection.csprojResolveAssemblyReference.cache
+E:\Projects\TaskCQRS\TaskCQRS.Projection\bin\Debug\TaskCQRS.Projection.dll
+E:\Projects\TaskCQRS\TaskCQRS.Projection\bin\Debug\TaskCQRS.Projection.pdb
+E:\Projects\TaskCQRS\TaskCQRS.Projection\bin\Debug\Autofac.dll
+E:\Projects\TaskCQRS\TaskCQRS.Projection\bin\Debug\MongoDB.Bson.dll
+E:\Projects\TaskCQRS\TaskCQRS.Projection\bin\Debug\MongoDB.Driver.dll
+E:\Projects\TaskCQRS\TaskCQRS.Projection\bin\Debug\TaskCQRS.Core.dll
+E:\Projects\TaskCQRS\TaskCQRS.Projection\bin\Debug\TaskCQRS.Domain.dll
+E:\Projects\TaskCQRS\TaskCQRS.Projection\bin\Debug\TaskCQRS.Core.pdb
+E:\Projects\TaskCQRS\TaskCQRS.Projection\bin\Debug\TaskCQRS.Domain.pdb
+E:\Projects\TaskCQRS\TaskCQRS.Projection\bin\Debug\Autofac.xml
+E:\Projects\TaskCQRS\TaskCQRS.Projection\bin\Debug\MongoDB.Bson.xml
+E:\Projects\TaskCQRS\TaskCQRS.Projection\bin\Debug\MongoDB.Driver.xml
+E:\Projects\TaskCQRS\TaskCQRS.Projection\obj\Debug\TaskCQRS.Projection.dll
+E:\Projects\TaskCQRS\TaskCQRS.Projection\obj\Debug\TaskCQRS.Projection.pdb
